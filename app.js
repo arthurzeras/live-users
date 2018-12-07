@@ -1,8 +1,13 @@
-const app = require('http').createServer()
+const app = require('http').createServer(handler);
 const io = require('socket.io')(app);
 
 app.listen(3000);
-const logados = []
+
+const handler = (req, res) => {
+  res.send('Live users running')
+}
+
+const logados = [];
 
 io.on('connection', socket => {
   setInterval(() => {
