@@ -1,13 +1,14 @@
-const app = require('http').createServer(handler);
+const app = require('http').createServer((req, res) => {
+  if (req.url === '/') {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.write('Kintegra live users esta rodando');
+    res.end();
+  }
+});
+
 const io = require('socket.io')(app);
 
-const handler = (req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.write('Kintegra live users está rodando');
-  res.end();
-}
-
-app.listen(80);
+app.listen(3000);
 
 const logados = [];
 
