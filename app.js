@@ -18,7 +18,7 @@ io.on('connection', socket => {
     }
   });
 
-  socket.on('desliguei', data => {
+  socket.on('Desliguei', data => {
     logados.splice(logados.indexOf(data), 1)
     console.log('Desconectado: ', data)
     console.log('Logados: ', logados)
