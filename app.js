@@ -8,7 +8,7 @@ const app = require('http').createServer((req, res) => {
 
 const io = require('socket.io')(app);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 const logados = [];
 
